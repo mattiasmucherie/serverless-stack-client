@@ -1,7 +1,9 @@
 export default {
+  STRIPE_KEY: "pk_test_46zYjQNSCpJslL11rOlcoG0Y002GwAlMvi",
+  MAX_ATTACHMENT_SIZE: 5000000,
   s3: {
     REGION: "eu-west-1",
-    BUCKET: "notes-app-upload-serverless-hallonkvarg"
+    BUCKET: "notes-app-uploads-serverless-hallonkvarg"
   },
   apiGateway: {
     REGION: "eu-west-1",
