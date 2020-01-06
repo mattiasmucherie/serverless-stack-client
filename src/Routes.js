@@ -8,6 +8,8 @@ import Signup from "./containers/Signup";
 import NewNote from "./containers/NewNote";
 import Notes from "./containers/Notes";
 import Settings from "./containers/Settings";
+import UnauthenticatedRoute from "./components/UnathenticatedRoute";
+import AuthenticatedRoute from "./components/AuthenticatedRoute";
 
 export default function Routes({ appProps }) {
   return (
@@ -18,36 +20,36 @@ export default function Routes({ appProps }) {
         component={Home}
         appProps={appProps}
       ></AppliedRoute>
-      <AppliedRoute
+      <UnauthenticatedRoute
         path="/signin"
         exact
         component={Signin}
         appProps={appProps}
-      ></AppliedRoute>
-      <AppliedRoute
+      />
+      <UnauthenticatedRoute
         path="/signup"
         exact
         component={Signup}
         appProps={appProps}
-      ></AppliedRoute>
-      <AppliedRoute
-        path="/notes/new"
-        exact
-        component={NewNote}
-        appProps={appProps}
-      ></AppliedRoute>
-      <AppliedRoute
-        path="/notes/:id"
-        exact
-        component={Notes}
-        appProps={appProps}
-      ></AppliedRoute>
-      <AppliedRoute
+      />
+      <AuthenticatedRoute
         path="/settings"
         exact
         component={Settings}
         appProps={appProps}
-      ></AppliedRoute>
+      />
+      <AuthenticatedRoute
+        path="/notes/new"
+        exact
+        component={NewNote}
+        appProps={appProps}
+      />
+      <AuthenticatedRoute
+        path="/notes/:id"
+        exact
+        component={Notes}
+        appProps={appProps}
+      />
       <Route component={NotFound}></Route>
     </Switch>
   );
